@@ -11,6 +11,7 @@ function createGrid(x){
             const div = document.createElement('div');
             div.setAttribute('style', 'margin: 0; padding: 0;');
             div.classList.add('grid');
+            div.addEventListener('mouseover', changeColor);
             container.appendChild(div);
         }
     }
@@ -20,6 +21,10 @@ function clearGrid(){
     while(container.firstChild){
         container.removeChild(container.lastChild);
     }
+}
+
+function changeColor(e){
+    e.target.style.backgroundColor = '#000';
 }
 
 function promptUser(){
