@@ -25,6 +25,7 @@ h1{
 
 .grid{
     background-color: white;
+    transition: 0.1s;
 }
 
 .grid:hover{

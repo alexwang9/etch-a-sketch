@@ -22,7 +22,6 @@ function clearGrid(){
     }
 }
 
-
 function promptUser(){
     size = prompt("Enter number of squares on one side (1-100):");
     clearGrid();
