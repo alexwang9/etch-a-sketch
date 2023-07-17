@@ -2,11 +2,10 @@ let size = 16;
 
 const container = document.querySelector('#container');
 const btn = document.querySelector('#btn');
-document.documentElement.style.setProperty("--columns-row", size);
-btn.addEventListener('click', promptUser());
 
 
 function createGrid(x){
+    document.documentElement.style.setProperty("--columns-row", size);
     for(let i = 0; i < x; i++){
         for(let j = 0; j < x; j++){
             const div = document.createElement('div');
@@ -18,13 +17,18 @@ function createGrid(x){
 }
 
 function clearGrid(){
-    container.remove();
+    while(container.firstChild){
+        container.removeChild(container.lastChild);
+    }
 }
 
 
 function promptUser(){
     size = prompt("Enter number of squares on one side (1-100):");
-    
+    clearGrid();
+    createGrid(size);
 }
+
+btn.addEventListener('click', promptUser);
 
 createGrid(size);
